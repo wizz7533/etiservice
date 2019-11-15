@@ -1,51 +1,37 @@
 require 'sinatra'
 
 get '/' do
-  erb :home
+  erb :accueil
 end
 
 get '/about' do
   erb :about
 end
 
+get '/compositions' do
+  erb :compositions
+end
+
+get '/tissees' do
+  erb :tissees
+end
+
+get '/cartons' do
+  erb :cartons
+end
+
+get '/adhesifs' do
+  erb :adhesifs
+end
+
+get '/consomables' do
+  erb :consomables
+end
+
+get '/sacs' do
+  erb :sacs
+end
+
 get '/contact' do
   erb :contact
 end
-
-__END__
-@@layout
-<% title="ETI_SERVICE" %>
-<!doctype html>
-
-<html lang="fr">
-  <head>
-    <title><%= title %></title>
-    <meta charset="utf-8">
-  </head>
-
-  <body>
-    <header>
-      <h1><%= title %></h1>
-      <nav>
-        <ul>
-          <li><a href="/" title="Home">Home</a></li>
-          <li><a href="/about" title="About">About</a></li>
-          <li><a href="/contact" title="Contact">Contact</a></li>
-        </ul>
-      </nav>
-    </header>
-
-    <section>
-      <%= yield %>
-    </section>
-  </body>
-</html>
-
-@@home
-<p>Bienvenue sur le nouveau site ETI SERVICE</p>
-
-@@about
-<p>ETI SERVICE, un site de façon d'étiquette à votre service</p>
-
-@@contact
-<p>ETI SERVICE: contact@etiservice.fr</p>
